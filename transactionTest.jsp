@@ -16,18 +16,14 @@
     
     try {
     	Class.forName(jdbcdriver);
-    	conn=DriverManager.getConnection(url,"root","tmdgml65");
+    	conn=DriverManager.getConnection(url,"root","");
     	
-    	System.out.println("여기1");
     	conn.setAutoCommit(false);
-    	System.out.println("여기2");
     	
     	pstmt=conn.prepareStatement(sql);
-    	System.out.println("여기3");
     	pstmt.executeUpdate();
     	//인설트인투 이기때문에 executeUpdate 업데이트 이다. rs를 안넣고 pstmt.executeUpdate();로 만든다.
     	
-    	System.out.println("여기3");
     	
     	pstmt=conn.prepareStatement(sql2);
     	rs=pstmt.executeQuery();
