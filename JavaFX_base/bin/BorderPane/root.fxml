@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<BorderPane prefHeight="200.0" prefWidth="300.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2">
+  <bottom>
+    <BorderPane minWidth="-1.0" prefHeight="19.0" prefWidth="300.0" BorderPane.alignment="BOTTOM_CENTER">
+      <center>
+        <TextField prefWidth="200.0" />
+      </center>
+      <right>
+        <Button mnemonicParsing="false" text="Button" BorderPane.alignment="CENTER" />
+      </right>
+    </BorderPane>
+  </bottom>
+  <center>
+    <TextArea prefWidth="200.0" wrapText="true" BorderPane.alignment="CENTER" />
+  </center>
+  <top>
+    <ToolBar>
+      <items>
+        <Button mnemonicParsing="false" text="Button" />
+        <Button mnemonicParsing="false" text="Button" />
+      </items>
+    </ToolBar>
+  </top>
+</BorderPane>
