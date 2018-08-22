@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.HBox?>
+
+<HBox alignment="CENTER" prefHeight="50.0" prefWidth="400.0" spacing="20.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2">
+  <!-- TODO Add Nodes -->
+  <children>
+    <Label style="-fx-background-color:black;&#10;-fx-text-fill:yellow;&#10;-fx-padding:5;" text="검정바탕노란글씨" />
+    <Label style="-fx-background-color:blue;&#10;-fx-text-fill:white;&#10;-fx-padding:5;" text="파란바탕하얀글씨" />
+    <Label style="-fx-background-color:yellow;&#10;-fx-text-fill:black;&#10;-fx-padding:5;" text="노란바탕검은글씨" />
+  </children>
+</HBox>

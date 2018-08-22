@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.BorderPane?>
+
+<BorderPane prefHeight="250.0" prefWidth="300.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="exam0822.RootController">
+  <!-- TODO Add Nodes -->
+  <bottom>
+    <HBox alignment="CENTER" prefHeight="36.0" prefWidth="300.0">
+      <children>
+        <Button id="btnAdd" fx:id="btnAdd" mnemonicParsing="false" onAction="#handleBtnAdd" text="추가" />
+      </children>
+    </HBox>
+  </bottom>
+  <center>
+    <TableView fx:id="tableView" prefHeight="200.0" prefWidth="200.0">
+      <columns>
+        <TableColumn fx:id="nameColumn" prefWidth="75.0" text="이름" />
+        <TableColumn fx:id="korColumn" prefWidth="75.0" text="국어" />
+        <TableColumn fx:id="mathColumn" prefWidth="75.0" text="수학" />
+        <TableColumn fx:id="engColumn" prefWidth="75.0" text="영어" />
+      </columns>
+    </TableView>
+  </center>
+</BorderPane>

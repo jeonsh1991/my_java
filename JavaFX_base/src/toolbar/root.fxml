@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.collections.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.input.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.HBox?>
+
+<BorderPane prefHeight="200.0" prefWidth="400.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="toolbar.RootController">
+  <bottom>
+    <TextArea fx:id="textArea" prefHeight="147.0" prefWidth="400.0" wrapText="true" />
+  </bottom>
+  <top>
+    <VBox prefHeight="0.0" prefWidth="0.0">
+      <children>
+        <MenuBar prefHeight="0.0" prefWidth="0.0">
+          <menus>
+            <Menu mnemonicParsing="false" text="파일">
+              <items>
+                <MenuItem mnemonicParsing="false" onAction="#handleNew" text="새로만들기">
+                  <accelerator>
+                    <KeyCodeCombination alt="DOWN" code="N" control="UP" meta="UP" shift="DOWN" shortcut="UP" />
+                  </accelerator>
+                  <graphic>
+                    <ImageView fitHeight="0.0" fitWidth="0.0" pickOnBounds="true" preserveRatio="true">
+                      <image>
+                        <Image url="@images/new.png" />
+                      </image>
+                    </ImageView>
+                  </graphic>
+                </MenuItem>
+                <MenuItem mnemonicParsing="false" onAction="#handleOpen" text="열기">
+                  <accelerator>
+                    <KeyCodeCombination alt="UP" code="O" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
+                  </accelerator>
+                  <graphic>
+                    <ImageView fitHeight="0.0" fitWidth="0.0" pickOnBounds="true" preserveRatio="true">
+                      <image>
+                        <Image url="@images/open.png" />
+                      </image>
+                    </ImageView>
+                  </graphic>
+                </MenuItem>
+                <MenuItem mnemonicParsing="false" onAction="#handleSave" text="저장">
+                  <accelerator>
+                    <KeyCodeCombination alt="UP" code="S" control="DOWN" meta="UP" shift="UP" shortcut="UP" />
+                  </accelerator>
+                  <graphic>
+                    <ImageView fitHeight="0.0" fitWidth="0.0" pickOnBounds="true" preserveRatio="true">
+                      <image>
+                        <Image url="@images/save.png" />
+                      </image>
+                    </ImageView>
+                  </graphic>
+                </MenuItem>
+                <SeparatorMenuItem mnemonicParsing="false" />
+                <MenuItem mnemonicParsing="false" onAction="#handleExit" text="끝내기" />
+              </items>
+            </Menu>
+          </menus>
+        </MenuBar>
+        <ToolBar>
+          <items>
+            <Button mnemonicParsing="false" onAction="#handleNew" text="">
+              <graphic>
+                <ImageView fitHeight="0.0" fitWidth="0.0" mouseTransparent="true" pickOnBounds="true" preserveRatio="true">
+                  <image>
+                    <Image url="@images/new.png" />
+                  </image>
+                </ImageView>
+              </graphic>
+            </Button>
+            <Button mnemonicParsing="false" onAction="#handleOpen" text="">
+              <graphic>
+                <ImageView fitHeight="0.0" fitWidth="0.0" mouseTransparent="true" pickOnBounds="true" preserveRatio="true">
+                  <image>
+                    <Image url="@images/open.png" />
+                  </image>
+                </ImageView>
+              </graphic>
+            </Button>
+            <Button mnemonicParsing="false" onAction="#handleSave" text="">
+              <graphic>
+                <ImageView fitHeight="0.0" fitWidth="0.0" mouseTransparent="true" pickOnBounds="true" preserveRatio="true">
+                  <image>
+                    <Image url="@images/save.png" />
+                  </image>
+                </ImageView>
+              </graphic>
+            </Button>
+            <ComboBox editable="false" prefWidth="100.0" promptText="선택">
+              <items>
+                <FXCollections fx:factory="observableArrayList">
+                  <String fx:value="공개" />
+                  <String fx:value="비공개" />
+                </FXCollections>
+              </items>
+            </ComboBox>
+          </items>
+        </ToolBar>
+      </children>
+    </VBox>
+  </top>
+</BorderPane>

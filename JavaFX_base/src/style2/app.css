@@ -1,0 +1,28 @@
+VBox{
+	-fx-border-color:red;
+	-fx-border-width:10px;
+	-fx-background-repeat:no-repeat;
+	-fx-background-position: center;
+	-fx-background-image: url("images/icon.gif")
+}
+
+
+TextField {
+	-fx-border-radius: 20px 10px 30px 50px;
+	-fx-border-width: 10 20 30 40;
+}
+TextField:focused{
+	-fx-border-color: red yellow blue pink;
+	-fx-background-color: yellow;
+}
+Button{
+	-fx-border-radius: 20px 20px 20px 20px;
+}
+Button:hover {
+	-fx-border-color: skyblue;
+	-fx-background-color: yellow;
+}
+Button:pressed {
+	-fx-border-color: skyblue;
+	-fx-background-color: red;
+}
