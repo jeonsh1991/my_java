@@ -5,12 +5,13 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.layout.BorderPane?>
 
-<BorderPane prefHeight="250.0" prefWidth="300.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="exam0822.RootController">
+<BorderPane prefHeight="250.0" prefWidth="300.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="exam0827.RootController">
   <!-- TODO Add Nodes -->
   <bottom>
-    <HBox alignment="CENTER" prefHeight="36.0" prefWidth="300.0">
+    <HBox alignment="CENTER" prefHeight="36.0" prefWidth="300.0" spacing="15.0">
       <children>
         <Button fx:id="btnAdd" mnemonicParsing="false" onAction="#handleBtnAdd" text="추가" />
+        <Button fx:id="btnPageChart" mnemonicParsing="false" onAction="#handleBtnPageChart" text="학생별 막대 그래프" />
       </children>
     </HBox>
   </bottom>

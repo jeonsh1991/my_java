@@ -1,0 +1,18 @@
+#btn1 {
+	-fx-effect: dropshadow(Gaussian, rgba(255,0,0,0.7) , 10, 0, 5, 5);
+}
+#btn1:pressed {
+	-fx-effect: innershadow(Gaussian, rgba(0,255,0,0.7) , 10, 0, 5, 5);
+}
+#btn1:hover {
+	-fx-effect: innershadow(Gaussian, rgba(0,0,255,0.7) , 10, 0, 5, 5);
+}
+#btn2 {
+	-fx-effect: innershadow(Gaussian, rgba(0,0,255,0.7) , 10, 0, 3, 3);
+}
+#btn2:pressed {
+	-fx-effect: dropshadow(Gaussian, rgba(255,0,0,0.7) , 10, 0, 3, 3);
+}
+#btn2:hover {
+	-fx-effect: dropshadow(Gaussian, rgba(40,50,30,0.7) , 10, 0, 5, 5);
+}
