@@ -21,6 +21,7 @@
       <!-- Modal content-->
       <div class="modal-content">
         <div class="modal-header">
+            <!-- class="close"는 단순히 css적용. data-dismiss="modal"이 모달창을 끄게하는 기능 -->
           <button type="button" class="close" data-dismiss="modal">×</button>
           <h4 class="modal-title">모달 창 타이틀</h4> <!-- 사용자 지정 부분② : 타이틀 -->
         </div>
