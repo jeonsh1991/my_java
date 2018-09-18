@@ -47,7 +47,7 @@
 					}
 
 					window.location.replace("http://" + window.location.hostname + 
-                            ( (location.port==""||location.port==undefined)?"":":" + location.port) + "/naverLoginEX/success.jsp");
+                            ( (location.port==""||location.port==undefined)?"":":" + location.port) + "/naverLoginEX/index.jsp");
 				                                                    /* 인증이 완료된후 /sample/main.html 페이지로 이동하라는것이다. 본인 페이로 수정해야한다. */
                  } else {
 					console.log("callback 처리에 실패하였습니다.");
