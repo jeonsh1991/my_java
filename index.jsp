@@ -1,118 +1,122 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-    <%
-    	session.setAttribute("messageContent", "messageContent");
-    session.setAttribute("messageType", "messageType");
-    %>
 <!DOCTYPE html>
-<html>
+<html lang="en">
+
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<link rel="stylesheet" href="css/bootstrap.css">
-<link rel="stylesheet" href="css/custom.css">
-<title>Insert title here</title>
-<script src="http://code.jquery.com/jquery-3.1.1.min.js"></script>
-<script src="js/bootstrap.js"></script>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>NaverLoginSDK Test with BootStrap</title>
+	<!-- Bootstrap -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u"
+	 crossorigin="anonymous">
+	<!-- Optional theme -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp"
+	 crossorigin="anonymous">
+
+	<style type="text/css">
+	.header,body{padding-bottom:20px}.header,.jumbotron{border-bottom:1px solid #e5e5e5}body{padding-top:20px}.footer,.header,.marketing{padding-right:15px;padding-left:15px}.header h3{margin-top:0;margin-bottom:0;line-height:40px}.footer{padding-top:19px;color:#777;border-top:1px solid #e5e5e5}@media (min-width:768px){.container{max-width:730px}}.container-narrow>hr{margin:30px 0}.jumbotron{text-align:center}.jumbotron .btn{padding:14px 24px;font-size:21px}.marketing{margin:40px 0}.marketing p+h4{margin-top:28px}@media screen and (min-width:768px){.footer,.header,.marketing{padding-right:0;padding-left:0}.header{margin-bottom:30px}.jumbotron{border-bottom:0}}
+	</style>
+
 </head>
+
 <body>
+
 	<div class="container">
-	<form method="post" action="./userRegister">
-		<table class="table table-bordered table-hover" style="text-align:center; border:1px solid #ddd">
-			<thead>
-				<tr>
-					<th colspan="3"><h4>회원 등록 양식</h4></th>
-				</tr>
-			</thead>
-			<tbody>
-				<tr>
-					<td style="width: 110px;"><h5>아이디</h5></td>
-					<td><input class="form-control" type="text" id="userID" name="userID" maxLength="20"></td>
-					<td style="width:110px;"><button class="btn btn-primary" onclick="registerCheckFunction();" type="button">중복체크</button>
-				</tr>
-				<tr>
-					<td style="width: 110px;"><h5>비밀번호</h5></td>
-					<td colspan="2"><input class="form-control" type="password" id="userPassword1" name="userPassword1" maxLength="20"></td>
-				</tr>
-				<tr>
-					<td style="width: 110px;"><h5>비밀번호확인</h5></td>
-					<td colspan="2"><input class="form-control" type="password" id="userPassword2" name="userPassword2" maxLength="20"></td>
-				</tr>
-				<tr>
-					<td style="width: 110px;"><h5>이름</h5></td>
-					<td colspan="2"><input class="form-control" type="text" id="userName" name="userName" maxLength="20"></td>
-				</tr>
-				<tr>
-					<td style="width: 110px;"><h5>나이</h5></td>
-					<td colspan="2"><input class="form-control" type="text" id="userAge" name="userAge" maxLength="20"></td>
-				</tr>
-				<tr>
-					<td style="width: 110px;"><h5>성별</h5></td>
-					<td colspan="2">
-						<div class="form-group" style="text-align: center; margin: 0 auto;">
-							<div class="btn-group" data-toggle="buttons">
-							<label class="btn btn-primary active">
-								<input type="radio" name="userGender" autocomplete="off" value="남자" checked>남자
-							</label>
-							<label class="btn btn-primary active">
-								<input type="radio" name="userGender" autocomplete="off" value="여자" >여자
-							</label>
-							</div>
-						</div>
-					</td>
-				</tr>
-				<tr>
-					<td style="width: 110px;"><h5>이메일</h5></td>
-					<td colspan="2"><input class="form-control" type="email" id="userEmail" name="userEmail" maxLength="20"></td>
-				</tr>
-				<tr>
-					<td style="text-align: left" colspan="4"><input class="btn btn-primary pull-right" type="submit" value="회원가입"></td>
-				</tr>
-			</tbody>
-		</table>
-	</form>
-	</div>
-	<%
-		String messageContent = null;
-		if(session.getAttribute("messageContent")!=null) {
-			messageContent = (String) session.getAttribute("messageContent");
-		}
-		String messageType = null;
-		if(session.getAttribute("messageType")!=null) {
-			messageType = (String) session.getAttribute("messageType");
-		}
-		if(messageContent != null) { %>
-		
-		<div class="modal fade" id="messageModal" tabindex="-1" role="dialog" aria-hidden="true">
-			<div class="vertical-align-helper">
-				<div class="modal-dialog vertical-align-center">
-					<div class="modal-content" <% if(messageType.equals("오류 메시지")) out.println("panel-warning"); else out.println("panel-seccess"); %> >
-						<div class="modal-header panel-heading">
-							<button type="button" class="close" data-dismiss="modal">
-								<span aria-hidden="true">&times;</span>
-								<span class="sr-only">Close</span>
-							</button>
-							<h4 class="modal-title">
-								<%= messageType %>
-							</h4>
-						</div>
-						<div class="modal-body">
-							<%= messageContent %>
-						</div>
-						<div class="modal-footer">
-							<button type="button" class="btn btn-primary" data-dismiss="modal">확인</button>
-						</div>
-					</div>
-				</div>
+		<div class="header clearfix">
+			<nav>
+				<ul class="nav nav-pills pull-right">
+					<li role="presentation" class="active"><a href="#">Home</a></li>
+					<li role="presentation"><a id="gnbLogin" href="#">Login</a></li>
+				</ul>
+			</nav>
+			<h3 class="text-muted">Login With NaverID Javascript SDK</h3>
+		</div>
+
+		<div class="jumbotron">
+			<h1>SAMPLE PAGE</h1>
+			<p class="lead">네이버 아이디로 로그인 Javascript 샘플 페이지.<br> 간단한 적용 예제를 포함합니다.</p>
+			<!-- (1) 버튼 event 처리를 위하여 id를 지정 id=loginButton -->
+			<p>
+				<div id="naverIdLogin"><a id="naverIdLogin_loginButton" href="#" role="button"><img src="https://static.nid.naver.com/oauth/big_g.PNG" width=320></a></div>
+			</p>
+		</div>
+
+		<div class="row marketing">
+			<div class="col-lg-6">
+				<h4>네이버 아이디로 로그인</h4>
+				<p>별도의 아이디, 비밀번호없이 네이버 아이디로 간편하게 외부 서비스에 로그인 할 수 있도록 하는 서비스입니다. 이용자는 복잡하고 번거로운 회원 가입 절차 없이 편하게 서비스를 이용하고, 사업자는 회원 가입, 로그인에
+					대한 허들을 낮춰 회원수가 늘고 매출은 오르는 경험을 할 수 있습니다. </p>
+
+				<h4>다양한 사용자 정보를 손쉽게 조회</h4>
+				<p>이름, 이메일, 별명, 생일, 연령대, 성별 등을 API로 간단한 조회를 통해 많은 사용자의 정보를 손쉽게 얻을 수 있습니다. 또한 블로그 등 다양한 네이버 서비스 들로 매시업이 가능합니다. </p>
+			</div>
+
+			<div class="col-lg-6">
+				<h4>4,200만 네이버 회원을 여러분의 사용자로!</h4>
+				<p>네이버 회원이라면, 여러분의 사이트를 간편하게 이용할 수 있습니다. 전 국민 모두가 가지고 있는 네이버 아이디 한개만 있으면 별도 가입없이 어떤 플랫폼에서도 간편하게 로그인할 수 있습니다. </p>
+
+				<h4>빠른개발, 간편한 운영</h4>
+				<p>플랫폼 별 SDK를 제공하여 쉽고 빠르게 개발할 수 있도록 지원합니다. 또한 환경별 로그인, 누적 사용자 등 다양한 통계를 제공하여 성과를 확인할 수 있습니다. </p>
 			</div>
 		</div>
-		<script>
-			$('#messageModal').modal("show");
-		</script>
-	<%
-		session.removeAttribute("messageContent");
-		session.removeAttribute("messageType");
+
+		<footer class="footer">
+		</footer>
+
+	</div>
+	<!-- /container -->
+	<script src="https://code.jquery.com/jquery-1.12.1.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+	<!-- (2) LoginWithNaverId Javscript SDK -->
+	<script src="naveridlogin_js_sdk_2.0.0.js"></script>
+
+	<!-- (3) LoginWithNaverId Javscript 설정 정보 및 초기화 -->
+	<script>
+		
+		var naverLogin = new naver.LoginWithNaverId(
+			{
+				clientId: "UIR5lNGJc33VnxYKM2Tc",
+				callbackUrl: "http://" + window.location.hostname + ((location.port==""||location.port==undefined)?"":":" + location.port) + "/naverloginAPI_Ex/callback.jsp",
+				isPopup: false,
+				loginButton: {color: "green", type: 3, height: 60}
+			}
+		);
+		/* (4) 네아로 로그인 정보를 초기화하기 위하여 init을 호출 */
+		naverLogin.init();
+		
+		/* (4-1) 임의의 링크를 설정해줄 필요가 있는 경우 */
+		$("#gnbLogin").attr("href", naverLogin.generateAuthorizeUrl());
+
+		/* (5) 현재 로그인 상태를 확인 */
+		window.addEventListener('load', function () {
+			naverLogin.getLoginStatus(function (status) {
+				if (status) {
+					/* (6) 로그인 상태가 "true" 인 경우 로그인 버튼을 없애고 사용자 정보를 출력합니다. */
+					setLoginStatus();
+				}
+			});
+		});
+
+		/* (6) 로그인 상태가 "true" 인 경우 로그인 버튼을 없애고 사용자 정보를 출력합니다. */
+		function setLoginStatus() {
+			var name = naverLogin.user.getName();
+			var email = naverLogin.user.getEmail();
+			var profileImage = naverLogin.user.getProfileImage();
+			var nickName = naverLogin.user.getNickName();
+			$("#naverIdLogin_loginButton").html('<br><br><img src="' + profileImage + '" height=50 /> <p>' + nickName + '님 반갑습니다'+email+","+name+'.</p>');
+			$("#gnbLogin").html("Logout");
+			$("#gnbLogin").attr("href", "#");
+			/* (7) 로그아웃 버튼을 설정하고 동작을 정의합니다. */
+			$("#gnbLogin").click(function () {
+				naverLogin.logout();
+				location.reload();
+			});
 		}
-	%>
+	</script>
 </body>
+
 </html>
+
