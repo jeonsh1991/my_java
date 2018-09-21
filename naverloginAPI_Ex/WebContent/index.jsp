@@ -102,9 +102,11 @@
 
 		/* (6) 로그인 상태가 "true" 인 경우 로그인 버튼을 없애고 사용자 정보를 출력합니다. */
 		function setLoginStatus() {
+			var name = naverLogin.user.getName();
+			var email = naverLogin.user.getEmail();
 			var profileImage = naverLogin.user.getProfileImage();
 			var nickName = naverLogin.user.getNickName();
-			$("#naverIdLogin_loginButton").html('<br><br><img src="' + profileImage + '" height=50 /> <p>' + nickName + '님 반갑습니다.</p>');
+			$("#naverIdLogin_loginButton").html('<br><br><img src="' + profileImage + '" height=50 /> <p>' + nickName + '님 반갑습니다'+email+","+name+'.</p>');
 			$("#gnbLogin").html("Logout");
 			$("#gnbLogin").attr("href", "#");
 			/* (7) 로그아웃 버튼을 설정하고 동작을 정의합니다. */
