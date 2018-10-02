@@ -1,0 +1,49 @@
+GOOGLE
+
+
+API : AIzaSyB4Mf6gIyGccOepMnVkZsONhXF7D0_sD8c
+
+
+클라이언트ID : 1008172242633-dbgdamskcigv6coibmumfoe9149cvcck.apps.googleusercontent.com
+
+클id 확인 : 1008172242633-dbgdamskcigv6coibmumfoe9149cvcck.apps.googleusercontent.com
+
+
+클라보안비번 : Lk5O9o43929ZOBlBwa2HIwoq
+
+
+구글 플랫폼 라이브라리 : <script src="https://apis.google.com/js/platform.js" async defer></script>
+
+
+앱클라id : <meta name="google-signin-client_id" content="YOUR_CLIENT_ID.apps.googleusercontent.com">
+
+
+구글로그인버튼 : <div class="g-signin2" data-onsuccess="onSignIn"></div>
+
+
+
+구글로그인 스크립트 :
+
+function onSignIn(googleUser) {
+  var profile = googleUser.getBasicProfile();
+  console.log('ID: ' + profile.getId()); // Do not send to your backend! Use an ID token instead.
+  console.log('Name: ' + profile.getName());
+  console.log('Image URL: ' + profile.getImageUrl());
+  console.log('Email: ' + profile.getEmail()); // This is null if the 'email' scope is not present.
+}
+
+
+
+
+구글로그아웃 스크립트 : 
+
+
+<a href="#" onclick="signOut();">Sign out</a>
+<script>
+  function signOut() {
+    var auth2 = gapi.auth2.getAuthInstance();
+    auth2.signOut().then(function () {
+      console.log('User signed out.');
+    });
+  }
+</script>
